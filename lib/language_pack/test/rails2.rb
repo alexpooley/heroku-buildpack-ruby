@@ -56,6 +56,7 @@ FILE
     schema_load    = rake.task("db:schema:load_if_ruby")
     structure_load = rake.task("db:structure:load_if_sql")
     db_migrate     = rake.task("db:migrate")
+    precompile     = rake.task("assets:precompile")
 
     return [] if db_migrate.not_defined?
 
@@ -71,7 +72,7 @@ FILE
       end
     end
 
-    [schema_load, structure_load, db_migrate]
+    [schema_load, structure_load, db_migrate, precompile]
   end
 
 
